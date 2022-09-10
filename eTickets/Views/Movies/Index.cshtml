@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Movie>
+
+@{
+    ViewData["Title"] = "List of Movies";
+}
+
+<div class="container">
+<div class="row">
+   @foreach (var item in Model)
+   {
+       <div class="card">
+           <div class="card-header">
+               @Html.DisplayFor(model => item.Name)
+           </div>
+
+           <div class="card-body">
+               <div class="row">
+               <div class="col-6">
+                <img src="@item.ImageURL" style="max-width:150px" />
+                </div>
+                <div class="col-6">
+                    @Html.DisplayFor(model=> item.Description)
+
+                    <hr>
+                            Start Date :  @Html.DisplayFor(model=> item.StartDate)
+                     <hr>
+                            End Date :  @Html.DisplayFor(model=> item.EndDate)
+
+                     <hr>
+                            Category : @Html.DisplayFor(model=> item.MovieCategory)
+                    </div>
+                    </div>
+
+                  
+           </div>
+
+           <div class="card-footer">
+               <a class="btn btn-primary">
+                   Details
+               </a>
+
+                <a class="btn btn-primary">
+                        Add to Cart [ <b>  @Html.DisplayFor(model=> item.Price) SAR </b> ]
+               </a>
+
+                    <a class="btn btn-primary">
+                        Edit
+                    </a>
+
+           </div>
+       </div>
+   }
+</div>
+</div>

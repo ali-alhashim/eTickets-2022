@@ -1,15 +1,15 @@
-﻿@model IEnumerable<Actor>
+﻿@model IEnumerable<Producer>
 
 @{
-    ViewData["Title"] = "List of Actors";
+    ViewData["Title"] = "List of Producers";
 }
 
 <div class="row">
     <div class="col-md-8 offset-md-2">
 
-            <table class="table">
-                <thead>
-                    <tr>
+        <table class="table">
+            <thead>
+                <tr>
 
 
                     <th>
@@ -23,45 +23,45 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Bio)
                     </th>
-                    
-                      <th>Actions</th>
-                        
-                    </tr>
-                </thead>
 
-                <tbody>
-                  @foreach(var item in Model)
-                  {
-                      <tr>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
                         <td class="align-middle">
-                            <img  class="rounded-circle" src="@item.ProfilePictureURL" style="max-width:150px"/>
-                            </td>
+                            <img class="rounded-circle" src="@item.ProfilePictureURL" style="max-width:150px" />
+                        </td>
                         <td class="align-middle"> @Html.DisplayFor(model => item.FullName)</td>
                         <td class="align-middle"> @Html.DisplayFor(model => item.Bio)</td>
                         <td class="align-middle">
                             <a class="btn btn-outline-primary">
                                 <i class=" bi-pencil-square"></i>
-                      
-                                Edit 
+
+                                Edit
                             </a>|
 
                             <a class="btn btn-outline-info">
                                 <i class=" bi-eye"></i>
 
-                                Details 
+                                Details
                             </a>|
 
                             <a class="btn btn-outline-danger">
                                 <i class=" bi-trash text-black"></i>
 
-                                Delete 
+                                Delete
                             </a>
                         </td>
-                      </tr>
-                  }
-                </tbody>
+                    </tr>
+                }
+            </tbody>
 
-            </table>
+        </table>
 
 
     </div>
